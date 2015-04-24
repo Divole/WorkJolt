@@ -47,15 +47,15 @@ if (isset($registration)) {
 <div id="register_form_wrapper" class="form_wrapper">
     <div id="title">WorkJolt</div>
         <form>
-            <input class = 'text_input form_row' type="text" placeholder="User ID" pattern="[a-zA-Z0-9]{2,64}" name="user_name" required >
-            <input class = 'text_input form_row' type="text" placeholder="First Name">
-            <input class = 'text_input form_row' type="text" placeholder="Last Name">
-            <input class = 'text_input form_row' type="email" placeholder="Email"  name="user_email" required>
-            <input class = 'text_input form_row' type="passwword" placeholder="Password" name="user_password_new" pattern=".{6,}" required autocomplete="off">
-            <input class = 'text_input form_row' type="passwordh" placeholder="Confirm Password" name="user_password_new" pattern=".{6,}" required autocomplete="off">
+            <input class = 'text_input form_row' type="text" placeholder="Username" pattern="[A-z0-9]{2,64}" name="username" required >
+            <input class = 'text_input form_row' type="text" placeholder="First Name" name="fname">
+            <input class = 'text_input form_row' type="text" placeholder="Last Name" name="lname">
+            <input class = 'text_input form_row' type="email" placeholder="Email"  name="email" required>
+            <input class = 'text_input form_row' type="password" placeholder="Password" name="password" pattern=".{6,}" required autocomplete="off">
+            <input class = 'text_input form_row' type="password" placeholder="Confirm Password" name="password_repeat" pattern=".{6,}" required autocomplete="off">
 
             <div class="text form_row"> 
-                <input type="checkbox" required> 
+                <input type="checkbox" name="terms" required> 
                 I agree to WorkJolt <a class = "link" href="">Tems and Conditions</a>
             </div>
 
