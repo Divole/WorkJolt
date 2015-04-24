@@ -1,5 +1,6 @@
 <?php
 // show potential errors / feedback (from login object)
+	?><script>console.log('not logged in view');</script><?php
 if (isset($login)) {
     if ($login->errors) {
         foreach ($login->errors as $error) {

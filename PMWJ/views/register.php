@@ -35,7 +35,7 @@ if (isset($registration)) {
 
 <!-- backlink -->
 <!-- <a href="index.php">Back to Login Page</a> -->
-
+<script>console.log('register view');</script>
 <head>
     <meta charset="utf-8" />
     <title>WorkJolt</title>
@@ -46,7 +46,7 @@ if (isset($registration)) {
 
 <div id="register_form_wrapper" class="form_wrapper">
     <div id="title">WorkJolt</div>
-        <form>
+        <form method="post">
             <input class = 'text_input form_row' type="text" placeholder="Username" pattern="[A-z0-9]{2,64}" name="username" required >
             <input class = 'text_input form_row' type="text" placeholder="First Name" name="fname">
             <input class = 'text_input form_row' type="text" placeholder="Last Name" name="lname">
