@@ -22,9 +22,9 @@ if (isset($login)) {
     <title>WorkJolt</title>
     <link rel="stylesheet" type="text/css" href="./../styles/stylesheet.css">
 </head>
-<body>
-    <div id = "top_body"></div>
-    <div id="login_form_wrapper" class="form_wrapper">
+<body class="pattern">
+    <div class="patter_shade body_size"></div>
+    <div id="login_form_wrapper" class="form_wrapper panel_color panel_shadow">
         <div id="title">WorkJolt</div>
         <form method="post">
             <input class = 'text_input form_row' type="text" placeholder="Username" pattern="[A-z0-9]{2,64}" name="username" required >
