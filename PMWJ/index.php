@@ -15,6 +15,9 @@ require_once("config/db.php");
 // load the login class
 require_once("classes/Login.php");
 
+if (isset($_GET['reg'])) {
+    echo "Your account has been created successfully. You can now log in.";
+}
 // create a login object. when this object is created, it will do all login/logout stuff automatically
 // so this single line handles the entire login process. in consequence, you can simply ...
 $login = new Login();
