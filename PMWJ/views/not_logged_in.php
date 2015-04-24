@@ -22,14 +22,14 @@ if (isset($login)) {
     <title>WorkJolt</title>
     <link rel="stylesheet" type="text/css" href="./../styles/stylesheet.css">
 </head>
-<body>
-    <div id = "top_body"></div>
-    <div id="login_form_wrapper" class="form_wrapper">
+<body class="pattern">
+    <div class="patter_shade body_size"></div>
+    <div id="login_form_wrapper" class="form_wrapper panel_color panel_shadow">
         <div id="title">WorkJolt</div>
         <form>
             <input class = 'text_input form_row' type="text" name="username" placeholder="Username" pattern="^[a-zA-Z0-9](_(?!(\.|_))|\.(?!(_|\.))|[a-zA-Z0-9]){6,18}[a-zA-Z0-9]$">
             <input class = 'text_input form_row' type="password" name="password" placeholder="Password">
-            <div class = "form_row absolute_row" >
+            <div class = "form_row absolute_position" >
                 <div id="registration_link">
                     <a  class="link" href="register.php">Want to be a member?</a>
                 </div>

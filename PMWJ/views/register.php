@@ -41,10 +41,10 @@ if (isset($registration)) {
     <title>WorkJolt</title>
     <link rel="stylesheet" type="text/css" href="./../styles/stylesheet.css">
 </head>
-<body>
-<div id = "top_body"></div>
+<body class="pattern">
+<div class="patter_shade body_size"></div>
 
-<div id="register_form_wrapper" class="form_wrapper">
+<div id="register_form_wrapper" class="form_wrapper panel_color panel_shadow">
     <div id="title">WorkJolt</div>
         <form method="post">
             <input class = 'text_input form_row' type="text" placeholder="Username" pattern="[A-z0-9]{2,64}" name="username" required >
@@ -59,7 +59,7 @@ if (isset($registration)) {
                 I agree to WorkJolt <a class = "link" href="">Tems and Conditions</a>
             </div>
 
-            <div class=" form_row absolute_row">
+            <div class=" form_row absolute_position">
                 <input class="btn btn_wrapper" type="submit"  name="register" value="Register"/>
             </div>
         </form>
