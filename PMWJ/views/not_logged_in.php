@@ -15,27 +15,28 @@ if (isset($login)) {
 ?>
 
 <!-- login form box -->
-<!DOCTYPE html>
-<html>
+
 <head>
     <meta charset="utf-8" />
     <title>WorkJolt</title>
+    <link rel="stylesheet" type="text/css" href="./../styles/stylesheet.css">
 </head>
 <body>
-    <h1>Login</h1>
-
-<form>
-		<label for="username">Username: </label>
-        <input type="text" name="username" placeholder="Username" pattern="^[a-zA-Z0-9](_(?!(\.|_))|\.(?!(_|\.))|[a-zA-Z0-9]){6,18}[a-zA-Z0-9]$"><br>
-		<label for="password">Password: </label>
-        <input type="password" name="password" placeholder="Password"><br>
-		<input type="submit" name="Log in"><br>
-		<a href="register.php">Want to be a member?</a>
-
-</form>
-
-
+    <div id = "top_body"></div>
+    <div id="login_form_wrapper" class="form_wrapper">
+        <div id="title">WorkJolt</div>
+        <form>
+            <input class = 'text_input form_row' type="text" name="username" placeholder="Username" pattern="^[a-zA-Z0-9](_(?!(\.|_))|\.(?!(_|\.))|[a-zA-Z0-9]){6,18}[a-zA-Z0-9]$">
+            <input class = 'text_input form_row' type="password" name="password" placeholder="Password">
+            <div class = "form_row absolute_row" >
+                <div id="registration_link">
+                    <a  class="link" href="register.php">Want to be a member?</a>
+                </div>
+                <div class="form_row btn_wrapper">
+                    <input class="btn" type="submit" name="Log in" value="Sign in">
+                </div>
+            </div>    
+        </form>
+    </div>
 </div>
-
 </body>
-</html>

@@ -1,0 +1,119 @@
+html{
+	height: 100%;
+	padding:0;
+	margin: 0;
+}
+
+body{
+	height: 100%;
+	padding:0;
+	margin: 0;
+	text-align: center;
+	background-image: url("congruent_outline.png");
+	
+}
+#top_body{
+	height: 100%;
+	width: 100%;
+	background: #C1D5D5;
+	opacity: 0.6;
+	position: absolute;
+	left:0;
+	right:0;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.form_wrapper form{
+	width: 400px;
+	text-align: left;
+	display: inline-block;
+	text-align: center;
+}
+
+#login_form_wrapper{
+	height: 250px;
+	width: 500px;
+	padding-top: 39px;
+}
+#register_form_wrapper{
+	height: 600px;
+	width: 500px;
+	padding-top: 39px;
+}
+
+.form_wrapper{
+	display: inline-block;
+	position: absolute;
+	top:0;
+	bottom: 0;
+	left:0;
+	right:0;
+	margin: auto;
+	background-color: #1F333A;
+	box-shadow: 0 0 5px #393A3A;
+}
+.form_row{
+	margin-bottom: 20px;
+	width: 400px;
+	text-align: left;
+}
+.absolute_row{
+	position: absolute;
+}
+
+.text_input{
+	box-sizing: border-box;
+	padding: 10px;
+	border:none;
+	border-radius: 3px;
+}
+.text{
+	color: white;
+
+}
+
+#title{
+	color: #FCFD13;
+	font-size: 22px;
+	margin-bottom: 20px;
+}
+
+.link{
+	color: #12D6D2;
+	text-decoration: none;
+	font-style: italic;
+}
+#registration_link{
+	width: 300px;
+	position: absolute;
+	left: 0;
+}
+
+#submit_registration{
+	width: 400px; 
+	text-align: right; 
+	display: inline;
+	box-sizing:border-box;
+}
+
+.btn_wrapper{
+	width: 100px; 
+	box-sizing:border-box;
+	position: absolute;
+	right: 0;
+}
+
+.btn{
+	width: 100px;
+	background: #1CC0C4;
+	border:none;
+	padding: 5px;
+	border-radius: 3px;
+	box-shadow: inset 0 0 4px #054646;
+	border: 1px solid #040505;
+	color: white;
+	font-size: 16px
+}
+
+
