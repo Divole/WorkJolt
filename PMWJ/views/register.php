@@ -9,10 +9,12 @@ if (isset($registration)) {
     if ($registration->messages) {
         foreach ($registration->messages as $message) {
             echo $message;
+            echo "<script> registration_successful() </script>";
         }
     }
 }
 ?>
+
 <!-- register form -->
 <!-- <form method="post" action="register.php" name="registerform"> -->
 
@@ -46,10 +48,12 @@ if (isset($registration)) {
 
 <div id="register_form_wrapper" class="form_wrapper panel_color panel_shadow">
     <div id="title">WorkJolt</div>
-        <form method="post">
+        <form method="POST">
+            <!-- the user name input field uses a HTML5 pattern check -->
             <input class = 'text_input form_row' type="text" placeholder="Username" pattern="[A-z0-9]{2,64}" name="username" required >
             <input class = 'text_input form_row' type="text" placeholder="First Name" name="fname">
-            <input class = 'text_input form_row' type="text" placeholder="Last Name" name="lname">
+            <input class = 'text_input form_row' type="text" placeholder="Last Name" name="lname"> 
+            <!-- the email input field uses a HTML5 email type check -->
             <input class = 'text_input form_row' type="email" placeholder="Email"  name="email" required>
             <input class = 'text_input form_row' type="password" placeholder="Password" name="password" pattern=".{6,}" required autocomplete="off">
             <input class = 'text_input form_row' type="password" placeholder="Confirm Password" name="password_repeat" pattern=".{6,}" required autocomplete="off">
@@ -64,4 +68,5 @@ if (isset($registration)) {
             </div>
         </form>
     </div>
+    <script type="text/javascript" src="/scripts/script.js"></script>
 </body>

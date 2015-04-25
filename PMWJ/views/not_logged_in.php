@@ -29,12 +29,12 @@ if (isset($login)) {
         <form method="post">
             <input class = 'text_input form_row' type="text" placeholder="Username" pattern="[A-z0-9]{2,64}" name="username" required >
             <input class = 'text_input form_row'  type="password" placeholder="Password" name="password" pattern=".{6,}" required>
-            <div class = "form_row absolute_row" >
+            <div class = "form_row absolute_row absolute_position" >
                 <div id="registration_link">
                     <a  class="link" href="register.php">Want to be a member?</a>
                 </div>
-                <div class="form_row btn_wrapper">
-                    <input class="btn" type="submit" name="login" value="Sign in">
+                <div class="form_row btn_wrapper absolute_position">
+                    <input class="btn " type="submit" name="login" value="Sign in">
                 </div>
             </div>    
         </form>
