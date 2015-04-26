@@ -19,10 +19,19 @@ $up=new update_profile();
 	<div id = "header"class=" absolute_position panel_color panel_shadow">
 
 		<div id="top_menu" class=" absolute_position">
-			<div id = "my_news" class = "top_menu_item"><a class = "item_deselected"href="news_feed.php"> My News</a></div>
-			<div id = "my_project" class = "top_menu_item"><a class = "item_deselected"href=""> My Project</a></div>
-			<div id = "my_profile" class = "top_menu_item"><a class = "item_selected"href=""> My Profile</a></div>
-			<div id = "my_people" class = "top_menu_item"><a class = "item_deselected"href=""> My People</a></div>
+
+			<div id = "my_news" class = "top_menu_item">
+				<a class = "top_menu_item_deselected"href=""> My News</a>
+			</div>
+			<div id = "my_project" class = "top_menu_item">
+				<a class = "top_menu_item_deselected"href=""> My Project</a>
+			</div>
+			<div id = "my_profile" class = "top_menu_item">
+				<a class = "top_menu_item_selected"href=""> My Profile</a>
+			</div>
+			<div id = "my_people" class = "top_menu_item">
+				<a class = "top_menu_item_deselected"href=""> My People</a>
+			</div>
 		</div>
 
 		<div class="absolute_position position_right" >
@@ -45,13 +54,15 @@ $up=new update_profile();
 			</div></div>
 	</div>
 
-		<!-- form wrapper-center pannel: contains form to complete user profile -->
+	<!-- form wrapper-center pannel: contains form to complete user profile -->
 	<div  id="profile_form_wrapper"class="form_wrapper panel_color panel_shadow">
+
 
 		<!-- link to profile preview -->
 		<div id="profile_preview" class="form_row"><a class="item_deselected" href="profile_preview.php">Preview</a></div>
 
 		<form class="form_wrapper_content" method="POST">
+
 
 			<label class="text">Current/Previous Job</label>
 			<input class = 'text_input form_row' type="text" placeholder="Location" name="location">
@@ -70,12 +81,10 @@ $up=new update_profile();
             <input class = 'text_input form_row' type="text" placeholder="Job Title" name="new_position">
 			<div class = 'form_row absolute_position'>
 				<input type="submit" name="edit_profile" value="Save" class="btn btn_wrapper">
+
 			</div>
 			
 		</form>
 	</div>
-
-	<!-- scripts go at the end of the body tag, because they have to be loaded last
-	<script type="text/javascript" src="scripts/script.js"></script> -->
 </body>
 </html>
