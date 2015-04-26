@@ -27,3 +27,8 @@ $news=new News();
           <a href="logout.php">Log out</a>|
 
     </nav>
+	
+	<?php echo $_SESSION['username'];?>
+	
+	</body>
+	</html>

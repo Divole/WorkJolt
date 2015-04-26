@@ -45,7 +45,7 @@
 		<!-- link to profile preview -->
 		<div id="profile_preview" class="form_row"><a class="item_deselected" href="profile_preview.php">Preview</a></div>
 
-		<form class="form_wrapper_content" method="POST">
+		<form class="form_wrapper_content" action="POST">
 
 			<label class="text">Current/Previous Job</label>
 			<input class = 'text_input form_row' type="text" placeholder="Location" name="location">
