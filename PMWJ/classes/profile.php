@@ -1,4 +1,6 @@
 <?php
+
+class Profile{
  /**
      * @var object $db_connection The database connection
      */
@@ -77,5 +79,5 @@ function getDetails($profile_name){
                 $this->errors[] = "Sorry, no database connection.";
             	}
 }
-
+}
 ?>
