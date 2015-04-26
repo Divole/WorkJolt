@@ -1,5 +1,3 @@
-
-<?php $user = $_SESSION['username'];?>|
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,7 +30,7 @@
 
     <!-- logout button on the header -->
     <div class="absolute_position position_right" >
-      <div class="btn btn_wrapper"><a class="text" href="../index.php?logout">Logout</a></div>
+      <div class="btn btn_wrapper"><a class="text" href="logout.php">Logout</a></div>
     </div>
   </div>
 
@@ -71,13 +69,12 @@
   <div id="content" class="auto_row">
     <div class="text">Posts:</div>
   <?php 
+	session_start();
     require_once("classes/News.php");
     $news=new News();
     $posts=$news->getPosts($_SESSION['id']);
-
-    echo "<script>console.log('". var_dump($posts).");</script>";
     foreach($posts as $i => $value){
-      echo "<script>console.log('bent');</script>";
+
       $POST_ADDED_BY=$news->getUserName(htmlentities( stripslashes($value[1])));
       $POST_BODY=htmlentities( stripslashes($value[2]));
       $POST_DATE=date('l d M Y h:i:s',$value[3]); 
