@@ -48,7 +48,7 @@ if (isset($registration)) {
 
 <div id="register_form_wrapper" class="form_wrapper panel_color panel_shadow">
     <div id="title">WorkJolt</div>
-        <form method="POST">
+        <form class="form_wrapper_content" method="POST">
             <!-- the user name input field uses a HTML5 pattern check -->
             <input class = 'text_input form_row' type="text" placeholder="Username" pattern="[A-z0-9]{2,64}" name="username" required >
             <input class = 'text_input form_row' type="text" placeholder="First Name" name="fname">

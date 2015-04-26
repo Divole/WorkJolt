@@ -38,11 +38,15 @@ body{
 	opacity: 0.6;
 }
 
-.form_wrapper form{
+.form_wrapper_content{
 	width: 400px;
 	text-align: left;
 	display: inline-block;
 	text-align: center;
+}
+.form_wrapper_content label {
+	font-family: sans-serif;
+	color: #CDDEDE;
 }
 
 #login_form_wrapper{
@@ -91,6 +95,7 @@ body{
 .text{
 	color: white;
 	text-decoration: none;
+	font-family: sans-serif;
 }
 
 #title{
@@ -191,13 +196,26 @@ body{
 	font-weight: bold;
 	
 }
-.top_menu_item_selected{
+.item_selected{
 	color: #FFFFFF;
 	text-decoration: none;
 }
-.top_menu_item_deselected{
+.item_deselected{
 	color: #CDDEDE;
 	text-decoration: none;
 }
+
+#profile_preview{
+	display: inline-block;
+	text-align: right;
+	font-family: sans-serif;
+}
+.block_mark{
+	border-bottom: 1px solid white;
+	font-weight: bold;
+	font-size: 14px
+}
+
+
 
 
