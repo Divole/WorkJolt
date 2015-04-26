@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 24, 2015 at 06:55 PM
+-- Generation Time: Apr 26, 2015 at 02:15 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `workjolt`
 --
-CREATE DATABASE IF NOT EXISTS `workjolt` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `workjolt`;
 
 -- --------------------------------------------------------
 
@@ -125,7 +123,15 @@ CREATE TABLE IF NOT EXISTS `users` (
   `fname` varchar(20) NOT NULL,
   `lname` varchar(20) NOT NULL,
   `salt` varchar(128) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `password`, `email`, `fname`, `lname`, `salt`) VALUES
+(1, 'Maverick', '$2y$10$2DkEismZnt9yhJwFvCs79eM2AIpKsPCY528Tf2e/Xtm9i9/gnuwfi', 'me@georgiterziyski.com', 'Georgi', 'Terziyski', ''),
+(2, 'workjolt', '$2y$10$f.j0siJAJU.FEaEgFp2wteT7WnNvFt3BXEqIadxmArRiFnssOso/i', 'terziyski@workjolt.com', 'Georgi', 'Terziyski', '');
 
 -- --------------------------------------------------------
 
@@ -135,15 +141,14 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 CREATE TABLE IF NOT EXISTS `user_details` (
 `id` int(11) NOT NULL,
-  `hometown` varchar(35) NOT NULL,
-  `adress` varchar(255) NOT NULL,
-  `country` varchar(35) NOT NULL,
-  `phone` int(12) NOT NULL,
-  `birth_date` int(10) NOT NULL,
-  `occupation` varchar(64) NOT NULL,
-  `picture_id` int(11) NOT NULL,
-  `date_joined` int(10) NOT NULL,
-  `user_id` int(11) NOT NULL
+  `location` varchar(35) NOT NULL,
+  `current_position` varchar(64) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `current_industry` varchar(40) NOT NULL,
+  `experience` int(2) NOT NULL,
+  `account_type` varchar(5) NOT NULL,
+  `new_position` varchar(40) NOT NULL,
+  `new_industry` varchar(40) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
@@ -202,7 +207,7 @@ ALTER TABLE `users`
 -- Indexes for table `user_details`
 --
 ALTER TABLE `user_details`
- ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `phone` (`phone`,`picture_id`);
+ ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -247,7 +252,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `user_details`
 --
