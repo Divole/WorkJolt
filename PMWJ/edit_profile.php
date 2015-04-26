@@ -21,16 +21,16 @@ $up=new update_profile();
 		<div id="top_menu" class=" absolute_position">
 
 			<div id = "my_news" class = "top_menu_item">
-				<a class = "top_menu_item_deselected"href=""> My News</a>
+				<a class = "item_deselected"href=""> My News</a>
 			</div>
 			<div id = "my_project" class = "top_menu_item">
-				<a class = "top_menu_item_deselected"href=""> My Project</a>
+				<a class = "item_deselected"href=""> My Project</a>
 			</div>
 			<div id = "my_profile" class = "top_menu_item">
-				<a class = "top_menu_item_selected"href=""> My Profile</a>
+				<a class = "item_selected"href=""> My Profile</a>
 			</div>
 			<div id = "my_people" class = "top_menu_item">
-				<a class = "top_menu_item_deselected"href=""> My People</a>
+				<a class = "item_deselected"href=""> My People</a>
 			</div>
 		</div>
 
@@ -59,7 +59,7 @@ $up=new update_profile();
 
 
 		<!-- link to profile preview -->
-		<div id="profile_preview" class="form_row"><a class="item_deselected" href="profile_preview.php">Preview</a></div>
+		<div id="profile_preview" class="form_row"><a class="item_deselected" href="views/profile_preview.php">Preview</a></div>
 
 		<form class="form_wrapper_content" method="POST">
 
