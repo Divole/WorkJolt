@@ -2,6 +2,9 @@
     /**
      * @var object $db_connection The database connection
      */
+	 
+	class update_Profile
+{ 
     private $db_connection = null;
     /**
      * @var array $errors Collection of error messages
@@ -20,9 +23,6 @@
     { 
 	?><script>console.log('$_POST edit_profile =');</script><?php
         if (isset($_POST["edit_profile"])) {
-			$profile=$_POST['edit_profile'];
-			?><script>console.log('<?php echo $profile;?>');</script><?php
-			?><script>console.log('vege');</script><?php
             $this->updateProfile();
         }
     }
@@ -50,9 +50,9 @@
             	$current_industry = $this->db_connection->real_escape_string(strip_tags($_POST['current_industry'],ENT_QUOTES));
             }
             if (empty($_POST['current_position'])) {
-            	$job_title = "NA";
+            	$current_position = "NA";
             }else{
-            	$job_title = $this->db_connection->real_escape_string(strip_tags($_POST['current_position'],ENT_QUOTES));
+            	$current_position = $this->db_connection->real_escape_string(strip_tags($_POST['current_position'],ENT_QUOTES));
             }if (empty($_POST['experience'])) {
             	$experience = 0;
             }else{
@@ -78,7 +78,7 @@
             $fetched_user_id = $this->db_connection->query($sql_id);
 
             $sql = "INSERT INTO user_details(location,current_industry,current_position,experience,account_type,new_industry,new_position,user_id) 
-            VALUES('".$location."','".$current_industry."','".$current_position."','".$experience."','".$account_type."','".$new_industry."','".$new_position."','".$fetched_user_id."')";
+            VALUES('".$location."','".$current_industry."','".$current_position."','".$experience."','".$account_type."','".$new_industry."','".$new_position."','".$_SESSION['id']."')";
 
             $query_update_user_details = $this->db_connection->query($sql);
 
@@ -91,4 +91,5 @@
         }
 
     }
+}
 ?>

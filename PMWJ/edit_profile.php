@@ -1,3 +1,9 @@
+<?php
+session_start();
+require_once("classes/update_profile.php");
+require_once("config/db.php");
+$up=new update_profile();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,7 +51,7 @@
 		<!-- link to profile preview -->
 		<div id="profile_preview" class="form_row"><a class="item_deselected" href="profile_preview.php">Preview</a></div>
 
-		<form class="form_wrapper_content" action="POST">
+		<form class="form_wrapper_content" method="POST">
 
 			<label class="text">Current/Previous Job</label>
 			<input class = 'text_input form_row' type="text" placeholder="Location" name="location">
@@ -55,7 +61,7 @@
             
             
             <div class="text form_row">I am looking to
-            	<input type="radio" name="acc_type" value="start"> start /
+            	<input type="radio" name="acc_type" value="start" checked> start /
 				<input type="radio" name="acc_type" value="join"> join    a company
             </div>
 
@@ -63,13 +69,13 @@
             <input class = 'text_input form_row' type="text" placeholder="Industry Title" name="new_industry">
             <input class = 'text_input form_row' type="text" placeholder="Job Title" name="new_position">
 			<div class = 'form_row absolute_position'>
-				<input type="submit" name="profile" value="Save" class="btn btn_wrapper">
+				<input type="submit" name="edit_profile" value="Save" class="btn btn_wrapper">
 			</div>
 			
 		</form>
 	</div>
 
-	<!-- scripts go at the end of the body tag, because they have to be loaded last -->
-	<script type="text/javascript" src="scripts/script.js"></script>
+	<!-- scripts go at the end of the body tag, because they have to be loaded last
+	<script type="text/javascript" src="scripts/script.js"></script> -->
 </body>
 </html>
