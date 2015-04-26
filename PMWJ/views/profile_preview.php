@@ -108,7 +108,7 @@
 			</div>
 
 			<div class="form_row">
-				<label id = "profile_status"> Started "Company Name" company</label>	
+				<label id = "profile_status"> Started "Company Name" company </label>	
 			</div>
 			
 		</div>
