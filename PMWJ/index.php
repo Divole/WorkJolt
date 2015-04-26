@@ -25,9 +25,10 @@ $login = new Login();
 // ... ask if we are logged in here:
 if ($login->isUserLoggedIn() == true) {
     // the user is logged in.
-    include("views/logged_in.php");
+    include("news_feed.php");
 
 } else {
     // the user is not logged in.
     include("views/not_logged_in.php");
 }
+?>
