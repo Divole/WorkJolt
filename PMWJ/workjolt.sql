@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 26, 2015 at 02:15 PM
+-- Generation Time: Apr 26, 2015 at 04:54 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `workjolt`
 --
+CREATE DATABASE IF NOT EXISTS `workjolt` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `workjolt`;
 
 -- --------------------------------------------------------
 
@@ -56,7 +58,14 @@ CREATE TABLE IF NOT EXISTS `friends` (
 `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `friend_id` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `friends`
+--
+
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES
+(1, 5, 2);
 
 -- --------------------------------------------------------
 
@@ -107,7 +116,16 @@ CREATE TABLE IF NOT EXISTS `posts` (
   `user_id` int(11) NOT NULL,
   `text` text NOT NULL,
   `date_posted` int(10) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `posts`
+--
+
+INSERT INTO `posts` (`id`, `user_id`, `text`, `date_posted`) VALUES
+(1, 1, 'iuytrewertyui', 23456),
+(2, 2, 'rtyuijhgkgjbvfgh', 345654),
+(3, 5, 'tyuikjnhbgfrtyuj', 123456);
 
 -- --------------------------------------------------------
 
@@ -123,15 +141,16 @@ CREATE TABLE IF NOT EXISTS `users` (
   `fname` varchar(20) NOT NULL,
   `lname` varchar(20) NOT NULL,
   `salt` varchar(128) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `email`, `fname`, `lname`, `salt`) VALUES
-(1, 'Maverick', '$2y$10$2DkEismZnt9yhJwFvCs79eM2AIpKsPCY528Tf2e/Xtm9i9/gnuwfi', 'me@georgiterziyski.com', 'Georgi', 'Terziyski', ''),
-(2, 'workjolt', '$2y$10$f.j0siJAJU.FEaEgFp2wteT7WnNvFt3BXEqIadxmArRiFnssOso/i', 'terziyski@workjolt.com', 'Georgi', 'Terziyski', '');
+(1, 'Maverick', '$2y$10$2DkEismZnt9yhJwFvCs79eM2AIpKsPCY528Tf2e/Xtm9i9/gnuwfi', 'me@georgiterziyski.com', 'Georgi', 'Terziyski nf', ''),
+(2, 'workjolt', '$2y$10$f.j0siJAJU.FEaEgFp2wteT7WnNvFt3BXEqIadxmArRiFnssOso/i', 'terziyski@workjolt.com', 'Georgi', 'Terziyski', ''),
+(5, 'jakabszili13', '$2y$10$E1OdRYUe1VGPINaIzDt9FOFnx8OmCDjTpFmyowqldNFr.63dSRqoC', 'jakabszili15@gmail.com', 'Szilard', 'Jakab', '');
 
 -- --------------------------------------------------------
 
@@ -227,7 +246,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `friends`
 --
 ALTER TABLE `friends`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `friend_requests`
 --
@@ -247,12 +266,12 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `user_details`
 --

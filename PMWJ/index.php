@@ -17,6 +17,7 @@ require_once("classes/Login.php");
 
 if (isset($_GET['reg'])) {
     echo "Your account has been created successfully. You can now log in.";
+
 }
 // create a login object. when this object is created, it will do all login/logout stuff automatically
 // so this single line handles the entire login process. in consequence, you can simply ...
@@ -25,10 +26,12 @@ $login = new Login();
 // ... ask if we are logged in here:
 if ($login->isUserLoggedIn() == true) {
     // the user is logged in.
-    include("news_feed.php");
+    header("Location: news_feed.php");
+
 
 } else {
     // the user is not logged in.
     include("views/not_logged_in.php");
+		unset($_GET['reg']);
 }
 ?>

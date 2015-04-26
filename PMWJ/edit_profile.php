@@ -13,6 +13,7 @@
 	<div id = "header"class=" absolute_position panel_color panel_shadow">
 
 		<div id="top_menu" class=" absolute_position">
+<<<<<<< HEAD:PMWJ/views/edit_profile.php
 			<div id = "my_news" class = "top_menu_item">
 				<a class = "top_menu_item_deselected"href=""> My News</a>
 			</div>
@@ -25,10 +26,16 @@
 			<div id = "my_people" class = "top_menu_item">
 				<a class = "top_menu_item_deselected"href=""> My People</a>
 			</div>
+=======
+			<div id = "my_news" class = "top_menu_item"><a class = "item_deselected"href="news_feed.php"> My News</a></div>
+			<div id = "my_project" class = "top_menu_item"><a class = "item_deselected"href=""> My Project</a></div>
+			<div id = "my_profile" class = "top_menu_item"><a class = "item_selected"href=""> My Profile</a></div>
+			<div id = "my_people" class = "top_menu_item"><a class = "item_deselected"href=""> My People</a></div>
+>>>>>>> 44170ae54519a3f87429a1694faeee732acf4944:PMWJ/edit_profile.php
 		</div>
 
 		<div class="absolute_position position_right" >
-			<div class="btn btn_wrapper"><a class="text" href="../index.php?logout">Logout</a></div>
+			<div class="btn btn_wrapper"><a class="text" href="logout.php">Logout</a></div>
 		</div>
 
 	</div>

@@ -7,7 +7,6 @@
     <title>WorkJolt</title>
     <link rel="stylesheet" type="text/css" href="/WorkJolt/styles/stylesheet.css">
 </head>
-
 <body class="pattern">
 
   <!-- body background shadow, no content here-->
@@ -55,6 +54,8 @@
 
   <!-- news feed wrapper-center pannel: contains posts -->
   <div  id="news_wrapper"class="form_wrapper panel_color panel_shadow">
+
+
 
   <div id="content" >
     <div class="text auto_row">You can write posts here:</div>
