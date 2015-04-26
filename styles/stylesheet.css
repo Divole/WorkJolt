@@ -65,6 +65,13 @@ body{
 	width: 500px;
 	padding-top: 39px;
 }
+#news_wrapper{
+	height: 400px;
+	width: 60%;
+	min-width: 300px;
+	padding-top: 39px;
+	margin-top: 100px
+}
 
 .form_wrapper{
 	display: inline-block;
@@ -213,8 +220,24 @@ body{
 .block_mark{
 	border-bottom: 1px solid white;
 	font-weight: bold;
-	font-size: 14px
+	font-size: 14px;
 }
+.auto_row{
+	width: 95%;
+	/*border:1px solid red;*/
+	display: inline-block;
+	text-align: left;
+}
+.auto_row textarea{
+	width: 100%;
+	border-radius: 3px;
+	border:none;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 5px; 
+	height: 100px;
+}
+
 
 
 
