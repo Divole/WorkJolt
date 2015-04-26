@@ -13,14 +13,14 @@
 	<div id = "header"class=" absolute_position panel_color panel_shadow">
 
 		<div id="top_menu" class=" absolute_position">
-			<div id = "my_news" class = "top_menu_item"><a class = "item_deselected"href=""> My News</a></div>
+			<div id = "my_news" class = "top_menu_item"><a class = "item_deselected"href="news_feed.php"> My News</a></div>
 			<div id = "my_project" class = "top_menu_item"><a class = "item_deselected"href=""> My Project</a></div>
 			<div id = "my_profile" class = "top_menu_item"><a class = "item_selected"href=""> My Profile</a></div>
 			<div id = "my_people" class = "top_menu_item"><a class = "item_deselected"href=""> My People</a></div>
 		</div>
 
 		<div class="absolute_position position_right" >
-			<div class="btn btn_wrapper"><a class="text" href="../index.php?logout">Logout</a></div>
+			<div class="btn btn_wrapper"><a class="text" href="logout.php">Logout</a></div>
 		</div>
 
 	</div>
@@ -45,7 +45,7 @@
 		<!-- link to profile preview -->
 		<div id="profile_preview" class="form_row"><a class="item_deselected" href="profile_preview.php">Preview</a></div>
 
-		<form class="form_wrapper_content" action="POST">
+		<form class="form_wrapper_content" method="POST">
 
 			<label class="text">Current/Previous Job</label>
 			<input class = 'text_input form_row' type="text" placeholder="Location" name="location">
