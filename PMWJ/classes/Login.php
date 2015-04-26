@@ -67,7 +67,7 @@ class Login
                 $username = $this->db_connection->real_escape_string($_POST['username']);
 
                 // database query, getting all the info of the selected user 
-                $sql = "SELECT username, password
+                $sql = "SELECT id, username, password
                         FROM users
                         WHERE username = '" . $username . "';";
                 $result_of_login_check = $this->db_connection->query($sql);
@@ -83,6 +83,7 @@ class Login
                     if (password_verify($_POST['password'], $result_row->password)) {
 
                         // write user data into PHP SESSION (a file on your server)
+						$_SESSION['id']=$result_row->id;
                         $_SESSION['username'] = $result_row->username;
                         $_SESSION['user_login_status'] = 1;
 
