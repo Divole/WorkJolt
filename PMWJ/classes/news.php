@@ -1,5 +1,5 @@
 <?php
-
+	 require_once("config/db.php");
 /**
  * Class news
  * handles the user's login and logout process
@@ -9,6 +9,7 @@ class News
     /**
      * @var object The database connection
      */
+
     private $db_connection = null;
     /**
      * @var array Collection of error messages
@@ -26,12 +27,7 @@ class News
      */
     public function __construct()
     {
-        // create/read session, absolutely necessary
-		
-		 if (isset($_GET["logout"])) {
-            $this->doLogout();
-        }
-		
+
 	}
 		
 		function isFriend($user_id,$post){
@@ -124,16 +120,6 @@ function getUserName($userID)
     }
     return $fname . " " . $lname;
 }
-
-function doLogout()
-    {
-        // delete the session of the user
-        $_SESSION = array();
-        session_destroy();
-        // return a little feeedback message
-        $this->messages[] = "You have been logged out.";
-
-    }
 
 }
 ?>

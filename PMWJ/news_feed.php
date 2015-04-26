@@ -7,8 +7,12 @@
      
     </header>
     <nav>
-			<?php echo $_SESSION['username'];?>|
-          <a href="?">My News</a>|
+<?php 	
+session_start();
+require_once("classes/News.php");
+$news=new News();
+?>
+          <a href="news_feed.php">My News</a>|
 
           <a href="?">My Profile</a>|
 
@@ -16,7 +20,7 @@
 
           <a href="?">My People</a>|
 
-          <a href="index.php?logout">Log out</a>|
+          <a href="logout.php">Log out</a>|
 
     </nav>
     <div id="content" style="width:800px; margin:auto;">
@@ -36,9 +40,7 @@
 	  
 	  </div>
 <?php 
-	require_once("classes/News.php");
 
-	$news=new News();
 	$posts=$news->getPosts($_SESSION['id']);
 		?><script>console.log(<?php echo var_dump($posts);?>);</script><?php
 	foreach($posts as $i => $value){
