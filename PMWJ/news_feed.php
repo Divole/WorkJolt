@@ -32,7 +32,7 @@
 
     <!-- logout button on the header -->
     <div class="absolute_position position_right" >
-      <div class="btn btn_wrapper"><a class="text" href="../index.php?logout">Logout</a></div>
+      <div class="btn btn_wrapper"><a class="text" href="logout.php">Logout</a></div>
     </div>
   </div>
 
