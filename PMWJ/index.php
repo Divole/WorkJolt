@@ -32,6 +32,6 @@ if ($login->isUserLoggedIn() == true) {
 } else {
     // the user is not logged in.
     include("not_logged_in.php");
-		unset($_GET['reg']);
+	unset($_GET['reg']);
 }
 ?>

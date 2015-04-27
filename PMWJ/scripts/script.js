@@ -51,6 +51,39 @@ function getPosts(){
 	});
 }
 
+function editProfile(){
+
+	var location = $("#location").val();
+	var current_industry = $("#current_industry").val();
+	var current_position = $("#current_position").val();
+	var selectedVal = "";
+	var selected = $("#radioDiv input[type='radio']:checked");
+	if (selected.length > 0) {
+	    selectedVal = selected.val();
+	}
+	// console.log(selectedVal);
+	var new_industry = $("#new_industry").val();
+	var new_position = $("#new_position").val();
+
+	$.ajax({
+	  	url: "processes/processEditProfile.php",
+	  	type: "POST",
+	  	// dataType: 'json',
+	  	data: {
+	  		location: location,
+	  		current_industry: current_industry,
+	  		current_position: current_position,
+	  		acc_type: selectedVal,
+	  		new_industry: new_industry,
+	  		new_position: new_position
+	  	},
+	  	success: function(response){
+	  		console.log(response);
+	  		// displayPosts(response);
+	  	}
+	});
+}
+
 function displayPosts(posts){
 	var container = $('#posts');
 	$.each(posts, function( index, value ) {

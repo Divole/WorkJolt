@@ -1,4 +1,5 @@
 <?php 
+    require_once("../config/db.php");   
     /**
      * @var object $db_connection The database connection
      */
@@ -21,13 +22,10 @@
      */
     public function __construct()
     { 
-	?><script>console.log('$_POST edit_profile =');</script><?php
-        if (isset($_POST["edit_profile"])) {
-            $this->updateProfile();
-        }
+	
     }
 
-    private function updateProfile(){
+    public function updateProfile(){
     	// create a database connection
             $this->db_connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
@@ -74,11 +72,14 @@
 
 
             //creating the sql statement and puting the data into the database and getting the user_id from the database
-            $sql_id = "SELECT id FROM users WHERE username = '".$_SESSION['username']."'";
-            $fetched_user_id = $this->db_connection->query($sql_id);
-
-            $sql = "INSERT INTO user_details(location,current_industry,current_position,experience,account_type,new_industry,new_position,user_id) 
-            VALUES('".$location."','".$current_industry."','".$current_position."','".$experience."','".$account_type."','".$new_industry."','".$new_position."','".$_SESSION['id']."')";
+            // $sql_id = "SELECT id FROM users WHERE username = '".$_SESSION['username']."'";
+            // $fetched_user_id = $this->db_connection->query($sql_id);
+            $sql = "UPDATE user_details SET location = '".$location."', current_industry = '".$current_industry."', current_position ='".$current_position."', experience = '".$experience."', account_type ='".$account_type."', new_industry = '".$new_industry."', new_position ='".$new_position."' WHERE user_id = ".$_SESSION['id'];
+            ?>
+            <scrip> console.log('<?php echo  $sql ?>')</scrip>
+            <?php
+            // $sql = "INSERT INTO user_details(location,current_industry,current_position,experience,account_type,new_industry,new_position,user_id) 
+            // VALUES('".$location."','".$current_industry."','".$current_position."','".$experience."','".$account_type."','".$new_industry."','".$new_position."','".$_SESSION['id']."')";
 
             $query_update_user_details = $this->db_connection->query($sql);
 

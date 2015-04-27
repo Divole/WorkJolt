@@ -62,9 +62,3 @@
 	<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 	<script type="text/javascript" src="scripts/script.js"></script>
 </body>
-
-<?php
-	require_once("../classes/news.php");
-	// $news=new News();
-	// $posts=$news->getPosts($_SESSION['id']);
-?>
