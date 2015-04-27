@@ -1,4 +1,15 @@
+<?php
+session_start();
+$id=$_SESSION['id'];
+require_once("classes/profile.php");
+require_once("config/db.php");
+$profile=new profile();
+$basicInfo=$profile->getBasicInfo($id);
+$detailedInfo=$profile->getDetailedInfo($id);
 
+
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,35 +72,35 @@
 		<!-- content of profile preview -->
 		<div class="form_wrapper_content">
 			<div class="form_row align_left">
-				<label id = "name">name</label>
-				<label id = "surname">surname</label>	
+				<label id = "name">Name</label>  <span><?php echo $basicInfo[1] ;?></span>
+				<label id = "surname">Surname</label>  <span><?php echo $basicInfo[2];?></span>
 			</div>
 
-			<div class="form_row">
-				<label id = "bithday">date of birth</label>
+			<!--<div class="form_row">
+				<label id = "bithday">Date of birth</label> <span><?php// echo ;?></span>
 			</div>
-
+			-->
 			<div class="form_row ">
-				<label id = "location">City, Country</label>	
+				<label id = "location">City</label> <span><?php echo $detailedInfo[0];?></span>
 			</div>
 
 			<div class="form_row block_mark">
-				<span class="text">Work Experience</span>	
+				<span class="text">Work Experience</span>
 			</div>
 
 			<div class="form_row">
-				<label>Industry title: </label>
+				<label>Industry title: </label> <span><?php echo $detailedInfo[2];?></span>
 				<label id = "Industry"></label>	
 			</div>
 
 			<div class="form_row">
-				<label>Position (Job title): </label>
+				<label>Position (Job title): </label> <span><?php echo $detailedInfo[1] ;?></span>
 				<label id = "position"></label>	
 			</div>
 
 			<div class="form_row">
 				<label> Work duration: </label>
-				<label id = "years_of_experience"></label>	
+				<label id = "years_of_experience"></label> <span><?php echo $detailedInfo[3];?></span>	
 				<label> Years</label>
 			</div>
 
@@ -98,17 +109,17 @@
 			</div>
 
 			<div class="form_row">
-				<label>Desired Industry: </label>
+				<label>Desired Industry: </label>  <span><?php echo $detailedInfo[6];?></span>
 				<label id = "new_industry"></label>	
 			</div>
 
 			<div class="form_row">
-				<label>Desired Position (Job title): </label>
+				<label>Desired Position (Job title): </label> <span><?php echo $detailedInfo[5];?></span>
 				<label id = "new position"></label>	
 			</div>
 
 			<div class="form_row">
-				<label id = "profile_status"> Started "Company Name" company </label>	
+				<label id = "profile_status"> Started "Company Name" company </label> 	
 			</div>
 			
 		</div>

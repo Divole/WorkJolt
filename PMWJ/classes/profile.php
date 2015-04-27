@@ -13,19 +13,23 @@ class Profile{
      * @var array $messages Collection of success / neutral messages
      */
     public $messages = array();
-
-if (isset($_GET['username'])){
-	$profile_name = $_GET['username'];
-	$id = $_GET['id'];
-}else{
-	$this->errors[] = "No user by that name";
-	exit();
-}
-
+	
+	public function __construct(){
+		
+		$this->db_connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+		
+		if (isset($_SESSION['username'])){
+			$profile_name = $_SESSION['username'];
+			$id = $_SESSION['id'];
+		}else{
+			$this->errors[] = "No user by that name";
+			header("Location: logout.php");
+		}
+		  }
 function getUserDetails($profile_name){
 
 //find the username in the DB
-            $this->db_connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+
 
             // change character set to utf8 and check it
             if (!$this->db_connection->set_charset("utf8")) {
@@ -54,7 +58,6 @@ function getUserDetails($profile_name){
 function getDetails($profile_name){
 
 //find the username in the DB
-            $this->db_connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
             // change character set to utf8 and check it
             if (!$this->db_connection->set_charset("utf8")) {
@@ -78,6 +81,45 @@ function getDetails($profile_name){
             }else {
                 $this->errors[] = "Sorry, no database connection.";
             	}
+}
+function getBasicInfo($id){
+	
+	if ($SQL = $this->db_connection->prepare("SELECT email, fname, lname FROM users WHERE id=? LIMIT 1"))
+{
+        $SQL->bind_param('i',$id);
+        $SQL->execute();
+		$SQL-> store_result();
+        $SQL-> bind_result($email, $fname, $lname);
+		$SQL->fetch();
+		$data=array();
+		$data[]=$email;
+		$data[]=$fname;
+		$data[]=$lname;
+        $SQL->close();
+	
+	return $data;
+	}
+}
+function getDetailedInfo($id){
+	if ($SQL = $this->db_connection->prepare("SELECT location, current_position, current_industry, experience, account_type, new_position, new_industry FROM user_details WHERE user_id=? LIMIT 1"))
+{
+        $SQL->bind_param('i',$id);
+        $SQL->execute();
+		$SQL-> store_result();
+        $SQL-> bind_result($location, $current_position, $current_industry, $experience, $account_type, $new_position, $new_industry);
+		$SQL->fetch();
+		$data=array();
+		$data[]=$location;
+		$data[]=$current_position;
+		$data[]=$current_industry;
+		$data[]=$experience;
+		$data[]=$account_type;
+		$data[]=$new_position;
+		$data[]=$new_industry;
+        $SQL->close();
+	
+	return $data;
+	}
 }
 }
 ?>
