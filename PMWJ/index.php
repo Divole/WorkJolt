@@ -26,12 +26,12 @@ $login = new Login();
 // ... ask if we are logged in here:
 if ($login->isUserLoggedIn() == true) {
     // the user is logged in.
-    header("Location: news_feed.php");
+    header("Location: logged_in.php?my_news");
 
 
 } else {
     // the user is not logged in.
-    include("views/not_logged_in.php");
+    include("not_logged_in.php");
 		unset($_GET['reg']);
 }
 ?>
