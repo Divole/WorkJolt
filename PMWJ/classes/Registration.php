@@ -110,11 +110,18 @@ class Registration
                     $sql = "INSERT INTO users (username, password, email, fname, lname)
                             VALUES('" . $username . "', '" . $password_hash . "', '" . $email . "', '" . $fname . "', '" . $lname . "');";
                     $query_new_user_insert = $this->db_connection->query($sql);
-
+					$sql2 = "SELECT id FROM users WHERE username = '" . $username . "';";
+					$query_get_user_id = $this->db_connection->query($sql2);
+					$row=$query_get_user_id->fetch_assoc();
+					$id=$row["id"];
+					
+					$sql3 = "INSERT INTO `user_details` (`id`, `location`, `current_position`, `user_id`, `current_industry`, `experience`, `account_type`, `new_position`, `new_industry`) VALUES ('', 'NA', 'NA', '"
+					. $id . "', 'NA', '0', 'NA', 'NA', 'NA');";
+					$query_user_details_insert=$this->db_connection->query($sql3);
                     // if user has been added successfully
                     if ($query_new_user_insert) {
                         $this->messages[] = "Your account has been created successfully. You can now log in.";
-						header("Location: index.php?reg=success");
+						header("Location: ../index.php?reg=success");
                     } else {
                         $this->errors[] = "Sorry, your registration failed. Please go back and try again.";
                     }
