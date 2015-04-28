@@ -33,7 +33,7 @@ function submitPost(){
 	  		if(response === 'ok'){
 	  			var myString = window.location.href;
 				var arr = myString.split('?');
-				window.location.href = arr['0']+'?my_news'
+				window.location.href = arr['0']+'?my_news';
 	  		}
 	  		
 	  	}
@@ -60,7 +60,8 @@ function getPosts(){
 function editProfile(){
 
 	var location = $("#location").val();
-	location = location.replace('Location: ','');
+	var arr = location.split(': ');
+	location = arr[1];
 
 	var current_industry = $("#current_industry").val();
 	var arr = current_industry.split(': ');
