@@ -19,7 +19,7 @@ if (isset($registration)) {
 <head>
     <meta charset="utf-8" />
     <title>WorkJolt</title>
-    <link rel="stylesheet" type="text/css" href="./../styles/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="../../styles/stylesheet.css">
 </head>
 <body class="pattern">
 <div class="patter_shade body_size"></div>
