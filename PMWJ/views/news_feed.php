@@ -1,4 +1,3 @@
-
 <div  id="news_wrapper"class="form_wrapper panel_color panel_shadow">
 
   <div>
@@ -21,22 +20,3 @@
     </div>
   </div>
 </div>
-
-
-
-<!--?php 
-    
-
-    foreach($posts as $i => $value){
-
-      $POST_ADDED_BY=$news->getUserName(htmlentities( stripslashes($value[1])));
-      $POST_BODY=htmlentities( stripslashes($value[2]));
-      $POST_DATE=date('l d M Y h:i:s',$value[3]); 
-      ?>
-      <p style='margin-left: 10px; margin-top: 5px; width:100%;font-size:13px;'>
-      <?php echo $POST_ADDED_BY." posted this at ".$POST_DATE; ?>
-      </p>
-      <br/>
-      <p style='margin-left: 10px;'><?php echo $POST_BODY;?></p-->
-
- 

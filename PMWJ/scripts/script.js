@@ -30,6 +30,12 @@ function submitPost(){
 	  	},
 	  	success: function(response){
 	  		console.log(response);
+	  		if(response === 'ok'){
+	  			var myString = window.location.href;
+				var arr = myString.split('?');
+				window.location.href = arr['0']+'?my_news'
+	  		}
+	  		
 	  	}
 	});
 }
@@ -54,8 +60,16 @@ function getPosts(){
 function editProfile(){
 
 	var location = $("#location").val();
+	location = location.replace('Location: ','');
+
 	var current_industry = $("#current_industry").val();
+	var arr = current_industry.split(': ');
+	current_industry = arr[1];
+
 	var current_position = $("#current_position").val();
+	var arr = current_position.split(': ');
+	current_position = arr[1];
+
 	var selectedVal = "";
 	var selected = $("#radioDiv input[type='radio']:checked");
 	if (selected.length > 0) {
@@ -63,7 +77,12 @@ function editProfile(){
 	}
 	// console.log(selectedVal);
 	var new_industry = $("#new_industry").val();
+	var arr = new_industry.split(': ');
+	new_industry = arr[1];
+
 	var new_position = $("#new_position").val();
+	var arr = new_position.split(': ');
+	new_position = arr[1];
 
 	$.ajax({
 	  	url: "processes/processEditProfile.php",
@@ -84,6 +103,8 @@ function editProfile(){
 	});
 }
 
+
+
 function displayPosts(posts){
 	var container = $('#posts');
 	$.each(posts, function( index, value ) {
@@ -99,4 +120,44 @@ function displayPosts(posts){
 	});
 }
 
+function getUserDetails(page){
+	$.ajax({
+	  	url: "processes/processPreviewProfile.php",
+	  	type: "POST",
+	  	dataType: 'json',
+	  	data: {
+	  		get_user_profile: "get_profile"
+	  	},
+	  	success: function(response){
+	  		console.log(response);
+	  		displayUserDetails(response, page);
+	  	}
+	});
+}
+
+function displayUserDetails(data, page){
+
+	console.log( "email: " + data.basicInfo[0]);
+	if (page === "preview") {
+		$('#name').text(data.basicInfo[1]);
+		$('#surname').text(data.basicInfo[2]);
+		$('#email').text(data.basicInfo[0]);
+		$('#location').text(data.details[0]);
+		$('#industry').text(data.details[2]);
+		$('#position').text(data.details[1]);
+		$('#experience').text(data.details[3]);
+		$('#new_industry').text(data.details[6]);
+		$('#new_position').text(data.details[5]);
+		$('#profile_status').text("Looking to "+data.details[4]+" a company.");
+	}else if(page === "edit"){
+		$('#location').val("location: "+data.details[0]);
+		$('#current_industry').val("Industry Title: "+data.details[2]);
+		$('#current_position').val("Position Title: "+data.details[1]);
+		$('#experience').val("Experience: "+data.details[3]+" Years");
+		$('#new_industry').val("Industry Title: "+data.details[6]);
+		$('#new_position').val("Position Title: "+data.details[5]);
+		// $('#profile_status').text("Looking to "+data.details[4]+" a company.");
+	}
+	
+}
 
